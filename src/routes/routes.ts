@@ -1,6 +1,8 @@
-import {Express} from "express";
+import { Express } from "express";
+import * as books from "./books";
 
 export function routes(app: Express) {
-
-    //TODO: Register routes
+  //TODO: Register routes
+  app.use("/api", books.router);
+  
 }
