@@ -8,42 +8,44 @@ export class Entities {
 
   constructor() {
     this.path = path.join(
-      path.dirname(process.mainModule.filename),
+      path.dirname(require.main!.filename),
       "data",
       "books.json"
     );
+
+    this.books = [];
   }
 
   //TODO: Improve saving logic
   //TODO: make fucntion structure more clear
   public save(callback: Function): void {
-      let parsedData: string = JSON.stringify(this.books);
-      fs.writeFile(this.path, parsedData, (err) => {
-          if(err){
-              throw err;
-          }
+    let parsedData: string = JSON.stringify(this.books);
+    fs.writeFile(this.path, parsedData, (err) => {
+      if (err) {
+        throw err;
+      }
 
-          callback(this.books);
-      });
+      callback(this.books);
+    });
   }
 
-  //TODO: Improve callback  
+  //TODO: Improve callback
   public getAll(callback: Function): void {
-      this.defaultQuery(callback);
+    this.defaultQuery(callback);
   }
-  
+
   //TODO: improve logic at a later iteration
   private defaultQuery(callback: Function): void {
     fs.readFile(this.path, (err, data) => {
-        if(err){
-            throw err;
-        }
+      if (err) {
+        throw err;
+      }
 
-        let parsedData = JSON.parse(data.toString()); 
+      let parsedData = JSON.parse(data.toString());
 
-        this.books = parsedData;
+      this.books = parsedData;
 
-        callback(this.books);
+      callback(this.books);
     });
   }
 }
