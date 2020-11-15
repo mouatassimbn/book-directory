@@ -22,6 +22,17 @@ export class Book {
       this.title = title;
       this.author = author;
       this.mainDescription = description ?? "n/a";
+      this.bookFormat = BookFormat.EBOOKS;
+      this.status = PublicationStatus.PUBLISHED;
+      this.bisac = "n/a";
+      this.publicationDate = new Date(Date.now());
+      this.salesTerritory = "n/a";
+      this.pageCount = 0;
+      this.totalRuntime = 0;
+      this.spineSize = 0;
+      this.weight = 0;
+      this.trimSize = 0;
+      this.keywords = [];
   }
 
   format(): string {
