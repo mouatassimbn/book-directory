@@ -35,8 +35,28 @@ export class Book {
       this.keywords = [];
   }
 
-  format(): string {
+  public format(): string {
       return `${this.title} written by ${this.author}`;
+  }
+
+  public static parse(data: any): Book {
+      let objData = data;
+      let parsedBook: Book;
+
+      parsedBook = new Book(objData.id, objData.isbn, objData.title, objData.author, objData.description);
+      parsedBook.bookFormat = objData.bookFormat ?? BookFormat.EBOOKS;
+      parsedBook.status = objData.status ?? PublicationStatus.PUBLISHED;
+      parsedBook.bisac = objData.bisac ?? "n/a";
+      parsedBook.publicationDate = objData.publicationDate ?? new Date(Date.now());
+      parsedBook.salesTerritory = objData.salesTerritory ?? "n/a";
+      parsedBook.pageCount = objData.pageCount ?? 0;
+      parsedBook.totalRuntime = objData.totalRuntime ?? 0;
+      parsedBook.spineSize = objData.spineSize ?? 0;
+      parsedBook.weight = objData.weight ?? 0;
+      parsedBook.trimSize = objData.trimSize ?? 0;
+      parsedBook.keywords = objData.keywords ?? [];
+
+      return parsedBook;
   }
 
 }

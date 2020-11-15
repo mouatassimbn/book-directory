@@ -15,25 +15,33 @@ export function get(req: Request, res: Response, nxt: NextFunction): void {
   const entities = new Entities();
 
   entities.getAll((data: Book[]) => {
-      let found = data.find(book => book.id === bookId);
+    let found = data.find((book) => book.id === bookId);
 
-      if(found){
-          res.status(200).send(found);
-      }
-      else {
-          res.status(404).send({error: "Requested book is not found!"});
-      }
+    if (found) {
+      res.status(200).send(found);
+    } else {
+      res.status(404).send({ error: "Requested book is not found!" });
+    }
   });
 }
 
 export function store(req: Request, res: Response, nxt: NextFunction): void {
-    res.status(418).send({error: "Not Implemented yet"});
+  let bookInfo = req.body;
+
+  let book: Book = Book.parse(bookInfo);
+
+  let entities = new Entities();
+
+  entities.books.push(book);
+  entities.save((data: string) => {
+    res.status(201).send(data);
+  });
 }
 
 export function update(req: Request, res: Response, nxt: NextFunction): void {
-    res.status(418).send({error: "Not Implemented yet"});
+  res.status(405).send({ error: "Not Implemented yet" });
 }
 
 export function destroy(req: Request, res: Response, nxt: NextFunction): void {
-    res.status(418).send({error: "Not Implemented yet"});
+  res.status(405).send({ error: "Not Implemented yet" });
 }
