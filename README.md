@@ -33,7 +33,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a> -->
 
-  <h3 align="center">BOOK-DIRECTORY (Under work)</h3>
+  <h3 align="center">BOOK-DIRECTORY</h3>
 
   <p align="center">
     This's a simple REST API where you can manage books
@@ -41,8 +41,8 @@
     <a href="https://github.com/mouatassimbn/book-directory"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/mouatassimbn/book-directory">View Demo</a>
-    ·
+    <!-- <a href="https://github.com/mouatassimbn/book-directory">View Demo</a>
+    · -->
     <a href="https://github.com/mouatassimbn/book-directory/issues">Report Bug</a>
     ·
     <a href="https://github.com/mouatassimbn/book-directory/issues">Request Feature</a>
@@ -63,23 +63,21 @@
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
-- [Acknowledgements](#acknowledgements)
+<!-- - [Acknowledgements](#acknowledgements) -->
 
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`mouatassimbn`, `book-directory`, `twitter_handle`, `email`
+This's a basic project where you can manage books. In which you see a list of all stored book or a specific book, plus you can add a book, modify a book and delete a book.
 
 ### Built With
 
-- []()
-- []()
-- []()
+- [Node.js](https://nodejs.org/en/)
+- [Express](https://expressjs.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Dotenv](https://www.npmjs.com/package/dotenv)
+- [Body-parser](https://www.npmjs.com/package/body-parser)
 
 <!-- GETTING STARTED -->
 
@@ -115,9 +113,25 @@ npm install
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+To build the application :
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+```
+npm run build
+```
+
+To run application in development mode :
+
+```
+npm run start:dev
+```
+
+To run application in production mode :
+
+```
+npm start
+```
+
+<!-- _For more examples, please refer to the [Documentation](https://example.com)_ -->
 
 <!-- ROADMAP -->
 
@@ -147,17 +161,15 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
-
 Project Link: [https://github.com/mouatassimbn/book-directory](https://github.com/mouatassimbn/book-directory)
 
 <!-- ACKNOWLEDGEMENTS -->
-
+<!-- 
 ## Acknowledgements
 
 - []()
 - []()
-- []()
+- []() -->
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
