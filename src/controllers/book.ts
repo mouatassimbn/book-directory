@@ -77,5 +77,23 @@ export function update(req: Request, res: Response, nxt: NextFunction): void {
 }
 
 export function destroy(req: Request, res: Response, nxt: NextFunction): void {
-  res.status(405).send({ error: "Not Implemented yet" });
+  //TODO: Add validation
+  const bookId: number = Number.parseInt(req.params.id);
+  const entities: Entities = new Entities();
+
+  entities.getAll((data: Book[]) => {
+    let foundBook = data.find((book) => book.id === bookId);
+
+    if(foundBook){
+      entities.books = entities.books.filter(book => book !== foundBook);
+      
+      entities.save((data: string) => {
+        res.status(200).send(data);
+      });
+    }
+    else {
+      res.status(404).send({ error: "Requested book is not found!" });
+    }
+
+  });
 }
