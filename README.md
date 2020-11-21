@@ -108,6 +108,11 @@ git clone https://github.com/mouatassimbn/book-directory.git
 ```sh
 npm install
 ```
+3. Rename the environment file
+
+```
+.env.example => .env
+```
 
 <!-- USAGE EXAMPLES -->
 
